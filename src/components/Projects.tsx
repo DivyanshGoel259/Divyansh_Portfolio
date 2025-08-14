@@ -1,19 +1,60 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, Filter } from 'lucide-react';
+import biopay from "../../assets/projects/biopay.png";
+import CFB from "../../assets/projects/CFB.png";
+import TechMasters from "../../assets/projects/Tech-Masters.png";
+import Instant from "../../assets/projects/Instant.png";
+import JoeDealAgent from "../../assets/projects/Joe-Deal-Agent.png";
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
 
   const projects = [
     {
-      title: 'Scrum Poker',
-      description: 'Real-time Scrum Poker application enabling collaborative Agile sprint planning with WebSocket technology across distributed client connections.',
-      image: 'https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'TypeScript', 'Node.js', 'WebSockets', 'PostgreSQL', 'Redis'],
+      title: 'Code-For-Bharat',
+      description: 'A hackathon website made using Next.js and Tailwind-CSS got over 10k+ registrations and hosted on .xyz domain (Organized by Me 😉).',
+      image: CFB, // replace with actual image path
+      technologies: ['Next.js', 'Tailwind CSS'],
+      category: 'frontend',
+      github: 'https://github.com/advay77/Code-For-Bharat',
+      live: 'https://www.codeforbharat.xyz/'
+    },
+    {
+      title: 'Bio-Pay',
+      description: 'A biometric payment system that uses palm recognition to authenticate users and process transactions. It ensures secure and convenient payments by eliminating the need for physical cards or cash.',
+      image: biopay, // replace with actual image path
+      technologies: ['Next.js', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB'],
       category: 'fullstack',
-      github: 'https://github.com',
-      live: 'https://example.com'
+      github: 'https://github.com/advay77/bio-pay-connect',
+      live: 'https://bio-pay-connect.vercel.app/'
+    },
+    {
+      title: 'Tech-Masters',
+      description: 'A platform for tech enthusiasts to connect, share knowledge, and collaborate on projects. My community which conducts hackathons and events to foster innovation and learning in the tech space. Conducted 3+ national level hackathons with over 10k+ registrations.',
+      image: TechMasters, // replace with actual image path
+      technologies: ['Next.js', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB'],
+      category: 'frontend',
+      github: 'https://github.com/advay77/techmasters',
+      live: 'https://techmasters-rouge.vercel.app/'
+    },
+    {
+      title: 'Instant-Care',
+      description: 'A healthcare platform that connects patients with doctors for instant consultations. It provides a seamless experience for booking appointments, accessing medical advice, and managing health records through Ayurveda and Allopathy.',
+      image:Instant, // replace with actual image path
+      technologies: ['Next.js', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB'],
+      category: 'fullstack',
+      github: 'https://github.com/advay77/Instant-Care',
+      live: 'https://instant-care-tau.vercel.app/'
+    },
+    {
+      title: 'Joe-Deal-Agent',
+      description: 'A personal AI agent that helps users find the best deals on products and services. It uses advanced algorithms to analyze user preferences.',
+      image: JoeDealAgent, // replace with actual image path
+      technologies: ['Next.js', 'Tailwind CSS', 'Firebase', 'AI API'],
+      category: 'fullstack',
+      github: 'https://github.com/advay77/JOE-DEAL-AGENT-',
+      live: 'https://joe-deal-agent.vercel.app/'
     },
     {
       title: 'Scrum',
@@ -22,23 +63,14 @@ const Projects = () => {
       technologies: ['React', 'PostgreSQL', 'Node.js', 'TypeScript', 'JWT', 'Express.js'],
       category: 'fullstack',
       github: 'https://github.com',
-      live: 'https://example.com'
+      live:"example.com"
     },
-    {
-      title: 'Wallet Management & On-chain Connectivity',
-      description: 'Custom wallet connection and management utilities with Privy and Magic Link for seamless onboarding; supports low-latency crypto ticker streaming via WebSockets.',
-      image: 'https://images.pexels.com/photos/6770773/pexels-photo-6770773.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Next.js', 'TypeScript', 'WebSockets', 'Supabase', 'Privy', 'Magic Link'],
-      category: 'blockchain',
-      github: 'https://github.com',
-      live: 'https://example.com'
-    }
   ];
 
   const categories = [
     { id: 'all', label: 'All Projects' },
     { id: 'fullstack', label: 'Full Stack' },
-    { id: 'blockchain', label: 'Blockchain/On‑chain' }
+    { id: 'frontend', label: 'Frontend' }
   ];
 
   const filteredProjects = filter === 'all'
